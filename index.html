@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+      @keyframes heartbeat {
+        0%,
+        20% {
+          transform: scale(1);
+        }
+
+        40%,
+        60% {
+          transform: scale(1.2);
+        }
+
+        80%,
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      body {
+        text-align: center;
+        background-color: black;
+      }
+
+      select {
+        margin-top: 20px;
+      }
+
+      div[ng-switch-when="2"] img,
+      div[ng-switch-when="3"] img {
+        animation: heartbeat 1s infinite;
+      }
+      div[ng-switch-when="4"] img {
+        animation: heartbeat 5s infinite;
+      }
+      div[ng-switch-when="4"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body ng-app="" align="center">
+    <div style="color: aliceblue" id="select-text">
+      Select From Top To Bottom:
+    </div>
+    <select ng-model="love">
+      <option value="1">144p</option>
+      <option value="2">360p</option>
+      <option value="3">720p</option>
+      <option value="4">1080p</option>
+    </select>
+
+    <br />
+
+    <div ng-switch="love">
+      <div ng-switch-when="1">
+        <img src="heart-36-3.png" height="500" width="500" />
+      </div>
+      <div ng-switch-when="2">
+        <img src="heart-87-1024x849.png" height="500" width="500" />
+      </div>
+      <div ng-switch-when="3">
+        <img src="1578912.png" height="500" width="500" />
+      </div>
+      <div ng-switch-when="4">
+        <img
+          src="—Pngtree—rose simulation plant romance_6524921.png"
+          height="400"
+          width="400"
+        />
+        <h1 style="font-size: 55px; color: white">YOU</h1>
+      </div>
+    </div>
+  </body>
+</html>
